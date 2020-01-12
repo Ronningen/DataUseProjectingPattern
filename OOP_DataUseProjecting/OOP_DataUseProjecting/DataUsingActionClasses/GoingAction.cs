@@ -17,7 +17,11 @@ namespace OOP_DataUseProjecting.DataUsingActionClasses
             }
         }
 
-        public GoingAction(HorizontalCoordinates coordinates, GoingParams movement = default)
+        public GoingAction(HorizontalCoordinates coordinates) 
+            : this(coordinates, new GoingParams(0, 0))
+        { }
+
+        public GoingAction(HorizontalCoordinates coordinates, GoingParams movement)
         {
             this.coordinates = coordinates;
             Movement = movement;
