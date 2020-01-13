@@ -1,5 +1,7 @@
 ﻿using System;
+using OOP_DataUseProjecting.DataClasses;
 using OOP_DataUseProjecting.Actors;
+using OOP_DataUseProjecting.DataUsingInterfaces;
 
 namespace OOP_DataUseProjecting
 {
@@ -8,9 +10,7 @@ namespace OOP_DataUseProjecting
         static void Main(string[] args)
         {
             Actor a = new Actor();
-            Console.WriteLine(a.Coordinates.x + " " + a.Coordinates.y);
             a.Go();
-            Console.WriteLine(a.Coordinates.x + " " + a.Coordinates.y);
             a.Show();
         }
     }

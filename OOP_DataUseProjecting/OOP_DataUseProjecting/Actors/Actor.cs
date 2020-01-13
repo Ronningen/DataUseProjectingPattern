@@ -1,35 +1,25 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Text;
-using System.Drawing;
 using OOP_DataUseProjecting.DataClasses;
-using OOP_DataUseProjecting.DataUsingActionClasses;
+using OOP_DataUseProjecting.DataUsingInterfaces;
 
 namespace OOP_DataUseProjecting.Actors
 {
-    class Actor
+    class Actor : ICanGo, ICanShow
     {
         public HorizontalCoordinates Coordinates { get; private set; }
-        private GoingAction goer;
-        private ShowingAction shower;
+
+        public GoingParams Movement { get; private set; }
+
+        public ShowingParams ShowingSettings { get; private set; }
 
         public Actor()
         {
             Coordinates = new HorizontalCoordinates(0, 0);
-            goer = new GoingAction(Coordinates);
-            shower = new ShowingAction(Coordinates, new ShowingParams(Color.Black));
-        }
-
-        public void Go()
-        {
-            goer.Movement.xOffset = 1;
-            goer.Movement.yOffset = 1;
-            goer.Act();
-        }
-
-        public void Show()
-        {
-            shower.Act();
+            Movement = new GoingParams(0, 0);
+            ShowingSettings = new ShowingParams(Color.Red);
         }
     }
 }
