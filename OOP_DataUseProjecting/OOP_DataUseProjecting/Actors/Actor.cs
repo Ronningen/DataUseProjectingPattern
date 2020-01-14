@@ -13,13 +13,13 @@ namespace OOP_DataUseProjecting.Actors
 
         public GoingParams Movement { get; private set; }
 
-        public ShowingParams ShowingSettings { get; private set; }
+        public Color color { get; private set; }
 
         public Actor()
         {
             Coordinates = new HorizontalCoordinates(0, 0);
             Movement = new GoingParams(0, 0);
-            ShowingSettings = new ShowingParams(Color.Red);
+            color = Color.Red;
         }
     }
 }

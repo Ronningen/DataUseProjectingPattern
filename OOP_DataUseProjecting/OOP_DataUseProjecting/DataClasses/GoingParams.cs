@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OOP_DataUseProjecting.DataClasses
 {
-    class GoingParams : Data
+    class GoingParams
     {
         public float xOffset, yOffset;
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OOP_DataUseProjecting.DataClasses
 {
-    class HorizontalCoordinates : Data
+    class HorizontalCoordinates
     {
         public float x, y;
 
