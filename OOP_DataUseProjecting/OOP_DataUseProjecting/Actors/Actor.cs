@@ -2,29 +2,20 @@
 using System.Drawing;
 using System.Collections.Generic;
 using System.Text;
-using OOP_DataUseProjecting.DataClasses;
-using OOP_DataUseProjecting.DataUsingInterfaces;
 
-namespace OOP_DataUseProjecting.Actors
+namespace OOP_DataUseProjecting
 {
     class Actor : ICanGo, ICanShow
     {
-        public HorizontalCoordinates Coordinates { get; private set; }
-
-        public GoingParams Movement { get; private set; }
-
-        public Color Color { get; private set; }
-
+        private Coordinates coordinates;
         private Goer goer;
         private Shower shower;
 
         public Actor()
         {
-            Coordinates = new HorizontalCoordinates(0, 0);
-            Movement = new GoingParams(0, 0);
-            Color = Color.Red;
-            goer = new Goer(Coordinates, Movement);
-            shower = new Shower(Coordinates, Color);
+            coordinates = new Coordinates(0, 0);
+            goer = new Goer(coordinates, 1, 1);
+            shower = new Shower(coordinates, Color.White);
         }
 
         public void Go()
