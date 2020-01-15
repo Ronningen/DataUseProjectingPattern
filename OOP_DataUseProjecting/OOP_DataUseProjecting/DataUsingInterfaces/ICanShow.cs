@@ -9,14 +9,25 @@ namespace OOP_DataUseProjecting.DataUsingInterfaces
     interface ICanShow
     {
         HorizontalCoordinates Coordinates { get; }
-        Color color  { get; }
+        Color Color  { get; }
+
+        void Show();
     }
 
-    static partial class InterfacesExtension
+    class Shower : ICanShow
     {
-        public static void Show(this ICanShow actor)
+        public HorizontalCoordinates Coordinates { get; set; }
+        public Color Color { get; set;  }
+
+        public Shower(HorizontalCoordinates coordinates, Color color)
         {
-            Console.Write("Рисую, вот цветом " + actor.color.Name + ".");
+            Coordinates = coordinates;
+            this.Color = color;
+        }
+
+        public void Show()
+        {
+            Console.Write("Рисую, вот цветом " + Color.Name + ".");
         }
     }
 }

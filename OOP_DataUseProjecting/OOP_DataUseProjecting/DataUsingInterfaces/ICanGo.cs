@@ -9,13 +9,25 @@ namespace OOP_DataUseProjecting.DataUsingInterfaces
     {
         HorizontalCoordinates Coordinates { get; }
         GoingParams Movement { get; }
+
+        void Go();
     }
 
-    static partial class InterfacesExtension
+    class Goer : ICanGo
     {
-        public static void Go(this ICanGo actor)
+        public HorizontalCoordinates Coordinates { get; set; }
+
+        public GoingParams Movement { get; set; }
+
+        public Goer(HorizontalCoordinates coordinates, GoingParams movement)
         {
-            actor.Coordinates.Offset(actor.Movement);
+            Coordinates = coordinates;
+            Movement = movement;
+        }
+
+        public void Go()
+        {
+            Coordinates.Offset(Movement);
             Console.WriteLine("Иду");
         }
     }
